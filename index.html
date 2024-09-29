@@ -166,9 +166,7 @@
             <img src="./images/dices 1.png" />
             <div class="layer">
               <h3>Dice Roller Game</h3>
-              <p>
-                About
-This is an interactive dice game built with React.js, where players can test their luck and prediction skills. The game allows players to select a number and roll a virtual dice. If the selected number matches the number rolled on the dice, the player earns points equal to the dice number.
+              <p>This is an interactive dice game built with React.js, where players can test their luck and prediction skills. The game allows players to select a number and roll a virtual dice. If the selected number matches the number rolled on the dice, the player earns points equal to the dice number.
               </p>
               <a href="https://pankajkumar23.github.io/dice-roller-game/"
                 ><i class="fa-solid fa-arrow-up-right-from-square"></i
@@ -188,13 +186,11 @@ This is an interactive dice game built with React.js, where players can test the
             <p><i class="fa-solid fa-paper-plane"></i>pankajr7508@gmail.com</p>
             <p><i class="fa-solid fa-square-phone"></i>7508116069</p>
             <div class="social-icons">
-              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/pankajkumar2k24/"><i class="fa-brands fa-linkedin"></i></a>
               <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
               <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
             </div>
-            <a href="./Pankaj_cv.pdf" download class="btn btn2"
-              >Download Cv</a
-            >
+            <a href="javascript:void(0);" onclick="downloadCV()" class="btn btn2">Download CV</a>
           </div>
           <div class="contact-right">
             <form name="submit-to-google-sheet" method="post">
@@ -276,5 +272,29 @@ This is an interactive dice game built with React.js, where players can test the
           });
       });
     </script>
+
+    <script>
+  function downloadCV() {
+    const button = document.getElementById('download-btn');
+    
+    // Change button text to "Downloading..."
+    button.innerHTML = 'Downloading...';
+
+    // Create a hidden link element to trigger the download
+    const link = document.createElement('a');
+    link.href = './images/Pankaj_cv.pdf'; // Make sure this is the correct path to your CV
+    link.download = 'Pankaj_cv.pdf';
+
+    // Append the link to the body, trigger the click, and remove the link
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Revert the button text after 3 seconds (or once the download is triggered)
+    setTimeout(() => {
+      button.innerHTML = 'Download CV';
+    }, 3000); // Adjust time as needed
+  }
+</script>
   </body>
 </html>
