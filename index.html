@@ -272,28 +272,35 @@
           });
       });
     </script>
-
-    <script>
+<script>
   function downloadCV() {
     const button = document.getElementById('download-btn');
     
-    // Change button text to "Downloading..."
-    button.innerHTML = 'Downloading...';
+    // Ensure the button exists
+    if (button) {
+      // Change button text to "Downloading..."
+      button.innerHTML = 'Downloading...';
 
-    // Create a hidden link element to trigger the download
-    const link = document.createElement('a');
-    link.href = './images/Pankaj_cv.pdf'; // Make sure this is the correct path to your CV
-    link.download = 'Pankaj_cv.pdf';
+      // Use a short timeout to allow the browser to update the button text
+      setTimeout(() => {
+        // Create a hidden link element to trigger the download
+        const link = document.createElement('a');
+        link.href = './images/Pankaj_cv.pdf'; // Ensure this path is correct for your CV
+        link.download = 'Pankaj_cv.pdf';
 
-    // Append the link to the body, trigger the click, and remove the link
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+        // Append the link to the body, trigger the click, and remove the link
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
-    // Revert the button text after 3 seconds (or once the download is triggered)
-    setTimeout(() => {
-      button.innerHTML = 'Download CV';
-    }, 3000); // Adjust time as needed
+        // Revert the button text after 3 seconds (or after download)
+        setTimeout(() => {
+          button.innerHTML = 'Download CV';
+        }, 3000); // Adjust the time as needed
+      }, 100); // Delay of 100ms to allow the text to change
+    } else {
+      console.error('Button not found!');
+    }
   }
 </script>
   </body>
