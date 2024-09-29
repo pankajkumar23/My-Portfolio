@@ -283,17 +283,10 @@
 
       // Use a short timeout to allow the browser to update the button text
       setTimeout(() => {
-        // Create a hidden link element to trigger the download
-        const link = document.createElement('a');
-        link.href = 'https://raw.githubusercontent.com/pankajkumar23/My-Portfolio/main/images/Pankaj_cv.pdf'; // Use the raw link for GitHub
-        link.download = 'Pankaj_cv.pdf'; // Specify the name for the downloaded file
+        // Open the PDF in a new tab instead of trying to download
+        window.open('https://raw.githubusercontent.com/pankajkumar23/My-Portfolio/main/images/Pankaj_cv.pdf', '_blank');
 
-        // Append the link to the body, trigger the click, and remove the link
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        // Revert the button text after 3 seconds (or after download)
+        // Revert the button text after 3 seconds
         setTimeout(() => {
           button.innerHTML = 'Download CV';
         }, 3000); // Adjust the time as needed
@@ -303,6 +296,7 @@
     }
   }
 </script>
+
 
   </body>
 </html>
