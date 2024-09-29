@@ -275,7 +275,7 @@
 <script>
   function downloadCV() {
     const button = document.getElementById('download-btn');
-    
+
     // Ensure the button exists
     if (button) {
       // Change button text to "Downloading..."
@@ -285,8 +285,8 @@
       setTimeout(() => {
         // Create a hidden link element to trigger the download
         const link = document.createElement('a');
-        link.href = './images/Pankaj_cv.pdf'; // Ensure this path is correct for your CV
-        link.download = 'Pankaj_cv.pdf';
+        link.href = 'https://raw.githubusercontent.com/pankajkumar23/My-Portfolio/main/images/Pankaj_cv.pdf'; // Use the raw link for GitHub
+        link.download = 'Pankaj_cv.pdf'; // Specify the name for the downloaded file
 
         // Append the link to the body, trigger the click, and remove the link
         document.body.appendChild(link);
@@ -303,5 +303,6 @@
     }
   }
 </script>
+
   </body>
 </html>
